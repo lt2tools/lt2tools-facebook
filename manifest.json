@@ -1,0 +1,77 @@
+{
+  "name": "LT2 Tools Facebook",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "LT2 Tools Facebook to improve Facebook user's experience and more",
+  "author": "Lê Thanh Tùng - tungltdev",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "icons": {
+    "48": "icons/icon-48x48.png",
+    "128": "icons/icon-128x128.png"
+  },
+  "browser_action": {
+    "default_title": "LT2 Tools Facebook",
+    "default_icon": {
+      "48": "icons/icon-48x48.png",
+      "128": "icons/icon-128x128.png"
+    }
+  },
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "cookies",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "web_accessible_resources": [
+    "*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.facebook.com/*"
+      ],
+      "exclude_matches": [
+        "https://m.facebook.com/*",
+        "https://touch.facebook.com/*",
+        "https://mobile.facebook.com/*",
+        "https://mbasic.facebook.com/*",
+        "https://graph.facebook.com/*",
+        "https://developers.facebook.com/*",
+        "https://code.facebook.com/*"
+      ],
+      "js": [
+        "static/js/jquery-3.3.1.min.js",
+        "injection/facebook-middleware.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*.facebook.com/*"
+      ],
+      "exclude_matches": [
+        "https://m.facebook.com/*",
+        "https://touch.facebook.com/*",
+        "https://mobile.facebook.com/*",
+        "https://mbasic.facebook.com/*",
+        "https://graph.facebook.com/*",
+        "https://developers.facebook.com/*",
+        "https://code.facebook.com/*"
+      ],
+      "js": [
+        "injection/fb-timer.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
+}

@@ -1,0 +1,15 @@
+{
+    "/background.js": "/background.js",
+    "/app.js": "/app.js",
+    "/injection/facebook-middleware.js": "/injection/facebook-middleware.js",
+    "/injection/facebook-content-script.js": "/injection/facebook-content-script.js",
+    "/injection/fb-timer.js": "/injection/fb-timer.js",
+    "/injection/facebook-dark-theme.js": "/injection/facebook-dark-theme.js",
+    "/ec_script/download-story.js": "/ec_script/download-story.js",
+    "/ec_script/tich-xanh.js": "/ec_script/tich-xanh.js",
+    "/app.css": "/app.css",
+    "/app.html": "/app.html",
+    "/manifest.json": "/manifest.json",
+    "/icons/icon-128x128.png": "/icons/icon-128x128.png",
+    "/icons/icon-48x48.png": "/icons/icon-48x48.png"
+}
