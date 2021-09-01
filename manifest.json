@@ -4,7 +4,6 @@
   "manifest_version": 2,
   "description": "LT2 Tools Facebook to improve Facebook user's experience and more",
   "author": "Lê Thanh Tùng - tungltdev",
-  "update_url": "https://clients2.google.com/service/update2/crx",
   "icons": {
     "48": "icons/icon-48x48.png",
     "128": "icons/icon-128x128.png"
@@ -18,15 +17,15 @@
   },
   "background": {
     "persistent": true,
-    "scripts": [
-      "background.js"
-    ]
+    "page": "background.html"
   },
   "permissions": [
-    "*://*/*",
+    "http://*/*",
+    "https://*/*",
     "tabs",
     "cookies",
     "storage",
+    "browsingData",
     "webRequest",
     "webRequestBlocking"
   ],
@@ -73,5 +72,5 @@
       "all_frames": false
     }
   ],
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://lt2tools.github.io https://www.google-analytics.com; object-src 'self'"
 }

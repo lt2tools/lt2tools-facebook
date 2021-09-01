@@ -8,6 +8,7 @@
 }(this, function () {
     "use strict";
     let is_open = 0
+
     function d(t, e) {
         var n = t.className.split(" ");
         "" === t.className && (n = []), n.push(e), t.className = n.join(" ")
@@ -25,7 +26,7 @@
 
     var c = {
         initOpen: function (t, n) {
-            if(is_open!==0){
+            if (is_open !== 0) {
                 return;
             }
             t.style.fontSize = m();
@@ -37,7 +38,7 @@
                 for (var e = ["animation", "webkitAnimation"], n = {
                     animation: "animationend",
                     webkitAnimation: "webkitAnimationEnd"
-                }, i = 0; i < e.length; i++) if (null != t.style[e[i]]) return n[e[i]]
+                }, i       = 0; i < e.length; i++) if (null != t.style[e[i]]) return n[e[i]]
             }(t);
 
             function l() {
@@ -53,20 +54,21 @@
                     l(), n.sureBtnClick()
                 }) : t.addEventListener("click", l)
             }), n.bottom || (t.style.top = (document.documentElement.clientHeight - t.offsetHeight) / 2 + "px", t.style.left = (document.documentElement.clientWidth - t.offsetWidth) / 2 + "px")
-            is_open=1;
+            is_open = 1;
         }, close: function (t) {
             for (var e = document.querySelector("body"), n = 0; n < t.length; n++) e.removeChild(t[n])
-            is_open=0;
+            is_open = 0;
         }
-    }, n = {
+    }, n  = {
         alert: function (t, e) {
             var n = {titleText: "", sureBtnText: "Đóng"};
             n = a(n, e);
             var i = document.createElement("div");
             i.innerText = n.sureBtnText, d(i, "dialog-button"), n.btns = [i], this.open(t, n)
-        }, confirm: function (t, e) {
+        }, confirm: function (t, e, cancelBtnText = "Huỷ", sureBtnText = "Đồng ý") {
             var n = {
-                titleText: "", cancelBtnText: "Huỷ", sureBtnText: "Đồng ý", sureBtnClick: function () {
+                titleText: "", cancelBtnText: cancelBtnText, sureBtnText: sureBtnText,
+                sureBtnClick: function () {
                 }
             };
             n = a(n, e);
@@ -90,7 +92,7 @@
             };
             (i = a(i, t)).bottom = !0, 1 == i.btn.length && "Xoá" == i.btn[0] && (i.btnColor = ["#EE2C2C"]);
             var e = document.createElement("div"), n = document.createElement("div"), o = document.createElement("div"),
-                l = document.createElement("div");
+                l                                                                       = document.createElement("div");
             n.innerText = i.title, l.innerText = i.cancelText, d(e, "dialog-mobile-bottom"), d(e, "animation-bottom-in"), d(n, "bottom-btn-title"), d(o, "bottom-btn-item"), d(l, "dialog-cancel-btn"), i.title && e.appendChild(n), e.appendChild(o), e.appendChild(l), i.btns = [], i.btns.push(l), i.btn.forEach(function (t, e) {
                 var n = document.createElement("div");
                 n.innerText = i.btn[e], n.setAttribute("i", e + 1), d(n, "dialog-item-btn"), i.btnColor[e] && (n.style.color = i.btnColor[e]), o.appendChild(n), i.btns.push(n)
@@ -100,7 +102,7 @@
             rm.addEventListener('click', function () {
                 this.closest('div.dialog-mobile-toast').remove();
             })
-            d(n, "dialog-mobile-toast"), d(n, "animation-fade-in"), d(i, "toast-content"), d(rm, "close"), i.innerText = t, rm.innerText = 'x', n.appendChild(rm),n.appendChild(i);
+            d(n, "dialog-mobile-toast"), d(n, "animation-fade-in"), d(i, "toast-content"), d(rm, "close"), i.innerText = t, rm.innerText = 'x', n.appendChild(rm), n.appendChild(i);
             if (status === 0) {
                 d(i, "toast-error")
             } else if (status === 1) {
@@ -121,7 +123,7 @@
             o.appendChild(n), n.style.fontSize = m(), n.style.left = (document.documentElement.clientWidth - n.offsetWidth) / 2 + "px", setTimeout(function () {
                 try {
                     o.removeChild(n)
-                }catch (e) {
+                } catch (e) {
                 }
             }, 1e3 * e)
         }, loadElement: [], loading: function (t) {
