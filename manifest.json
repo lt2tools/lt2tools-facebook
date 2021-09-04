@@ -1,7 +1,8 @@
 {
   "name": "LT2 Tools Facebook",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "manifest_version": 2,
+  "homepage_url": "https://lt2tools.github.io",
   "description": "LT2 Tools Facebook to improve Facebook user's experience and more",
   "author": "Lê Thanh Tùng - tungltdev",
   "icons": {
