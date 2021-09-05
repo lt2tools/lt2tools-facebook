@@ -1,5 +1,5 @@
 # LT2 Tools
-# LT2 Tools Facebook v0.0.5
+# LT2 Tools Facebook v0.0.6
 
 Hướng dẫn cài đặt
 -------------
