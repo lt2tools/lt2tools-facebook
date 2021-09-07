@@ -1,10 +1,9 @@
 {
   "name": "LT2 Tools Facebook",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "manifest_version": 2,
-  "homepage_url": "https://lt2tools.github.io",
-  "description": "LT2 Tools Facebook to improve Facebook user's experience and more",
-  "author": "Lê Thanh Tùng - tungltdev",
+  "description": "LT2 Tools Facebook Ứng dụng hỗ trợ tối đa các chức năng của facebook",
+  "author": "Lê Thanh Tùng - tungltdev@gmail.com",
   "icons": {
     "48": "icons/icon-48x48.png",
     "128": "icons/icon-128x128.png"
@@ -26,9 +25,16 @@
     "tabs",
     "cookies",
     "storage",
+    "notifications",
+    "contextMenus",
     "browsingData",
+    "unlimitedStorage",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
+    "system.cpu",
+    "system.memory",
+    "system.storage",
+    "system.display"
   ],
   "web_accessible_resources": [
     "*"
