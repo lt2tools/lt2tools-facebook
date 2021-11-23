@@ -65,7 +65,7 @@
             n = a(n, e);
             var i = document.createElement("div");
             i.innerText = n.sureBtnText, d(i, "dialog-button"), n.btns = [i], this.open(t, n)
-        }, confirm: function (t, e, cancelBtnText = "Huỷ", sureBtnText = "Đồng ý") {
+        }, confirm: function (t, e, cancelBtnText = "Cancel", sureBtnText = "Ok") {
             var n = {
                 titleText: "", cancelBtnText: cancelBtnText, sureBtnText: sureBtnText,
                 sureBtnClick: function () {
